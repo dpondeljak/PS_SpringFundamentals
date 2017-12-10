@@ -4,18 +4,26 @@ import java.util.List;
 
 import com.example.model.Customer;
 import com.example.repository.CustomerRepository;
-import com.example.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 	
-	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
+	private CustomerRepository customerRepository;
 	
-	/* (non-Javadoc)
-	 * @see com.example.service.CustomerService#findAll()
-	 */
+	public CustomerServiceImpl() {
+		
+	}
+
+	public CustomerServiceImpl(CustomerRepository pCustomerRepository) {
+		this.customerRepository = pCustomerRepository;
+	}
+	
 	@Override
 	public List<Customer> findAll(){
 		return customerRepository.findAll();
+	}
+
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
 	}
 	
 }
