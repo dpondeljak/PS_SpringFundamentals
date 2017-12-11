@@ -2,7 +2,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.example.service.CustomerService;
-import com.example.service.CustomerServiceImpl;
 
 public class Application {
 
